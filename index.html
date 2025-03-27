@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: darkred;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 10;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 20px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+            font-weight: bold;
+            position: relative;
+            z-index: 10;
+        }
+        button:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+        .floating {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            font-size: 80px;
+            font-weight: bold;
+            animation: floatUp 5s linear infinite;
+            z-index: 5;
+        }
+        .heart::before, .balloon::before, .butterfly::before, .star::before, .flower::before {
+            display: block;
+        }
+        .heart::before { content: "❤"; color: red; }
+        .balloon::before { content: "🎈"; color: crimson; }
+        .butterfly::before { content: "🦋"; color: blue; }
+        .star::before { content: "😁"; color: gold; }
+        .flower::before { content: "🌸"; color: pink; }
+        
+        .photo {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 5px solid pink;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            animation: floatUp 6s linear infinite;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 1; }
+        }
+        
+        #message {
+            display: none;
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 182, 193, 0.8); /* Light pink background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday My Lovely Cutie Patotie Gundiiii! 🎂❤️</h1>
+    <button onclick="showMessage()">Click for a Surprise</button>
+    <div id="message">
+        My love, words cannot truly capture how much you mean to me. Every moment with you is a blessing, and your presence fills my life with joy, warmth, and endless love. From the way you smile to the way you make my world brighter, everything about you is magical. You are my greatest happiness, my deepest love, and my forever dream. On this special day, I want you to know that you are cherished beyond words and loved beyond measure. Happy Birthday, my love! May this year bring you as much happiness as you have brought into my life. 💖
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+        function createFloatingObject(type) {
+            const obj = document.createElement('div');
+            obj.classList.add('floating', type);
+            obj.style.left = Math.random() * 90 + 'vw';
+            obj.style.bottom = '-10vh';
+            document.body.appendChild(obj);
+            setTimeout(() => { obj.remove(); }, 5000);
+        }
+        function createFloatingPhoto(imageUrl) {
+            const img = document.createElement('div');
+            img.classList.add('photo');
+            img.style.left = Math.random() * 90 + 'vw';
+            img.style.bottom = '-10vh';
+            img.style.backgroundImage = `url(${imageUrl})`;
+            document.body.appendChild(img);
+            setTimeout(() => { img.remove(); }, 6000);
+        }
+        
+        setInterval(() => createFloatingObject('heart'), 2000);
+        setInterval(() => createFloatingObject('balloon'), 2500);
+        setInterval(() => createFloatingObject('butterfly'), 3000);
+        setInterval(() => createFloatingObject('star'), 3500);
+        setInterval(() => createFloatingObject('flower'), 4000);
+        
+        setInterval(() => createFloatingPhoto('images/IMG-20241102-WA0001.jpg'), 2000);
+        setInterval(() => createFloatingPhoto('images/IMG-20241102-WA0002.jpg'), 3000);
+        setInterval(() => createFloatingPhoto('images/IMG-20241102-WA0003.jpg'), 4000);
+        setInterval(() => createFloatingPhoto('images/IMG-20250208-WA0061.jpg'), 5000);
+        setInterval(() => createFloatingPhoto('images/IMG-20250214-WA0006.jpg'), 6000);
+        setInterval(() => createFloatingPhoto('images/IMG-20250327-WA0003.jpg'), 7000);
+        setInterval(() => createFloatingPhoto('images/IMG-20250327-WA0004.jpg'), 8000);
+        setInterval(() => createFloatingPhoto('images/IMG-20250327-WA0005.jpg'), 9000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
